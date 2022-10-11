@@ -1,0 +1,150 @@
+main {
+  width: 100%;
+  height: 100vh;
+  padding: 0 2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    width: 100%;
+    max-width: 100rem;
+    background-color: white;
+
+    display: flex;
+
+    .form-container {
+      width: 100%;
+      max-width: 50rem;
+      padding: 3rem;
+
+      .top {
+        margin-bottom: 3rem;
+
+        img {
+          width: 8rem;
+          height: 8rem;
+        }
+
+        h1 {
+          font-weight: 600;
+          font-size: 3rem;
+        }
+
+        p {
+          color: $black-07;
+          font-weight: 500;
+          font-size: 1.4rem;
+        }
+      }
+
+      form {
+        input::placeholder {
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .form-item {
+          display: flex;
+          flex-direction: column;
+
+          label {
+            color: $black;
+            font-weight: 600;
+          }
+
+          input {
+            border: 0.2rem solid rgba(0, 0, 0, 0.2);
+            padding: 0.6rem;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+          }
+        }
+
+        .checkbox {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.8rem;
+          margin-bottom: 1.6rem;
+
+          input {
+            width: 3rem;
+            height: 3rem;
+          }
+
+          .checkbox-text {
+            color: $black-07;
+            font-weight: 500;
+          }
+        }
+
+        .btn-form {
+          color: $white;
+          background: $blue;
+          font-size: 2rem;
+          font-weight: 600;
+          padding: 1.6rem 6rem;
+          border-radius: 1rem;
+          margin-bottom: 1rem;
+        }
+
+        .create-account {
+          color: $black;
+          font-weight: 600;
+
+          span {
+            background: $blue;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+          }
+        }
+      }
+    }
+
+    .image {
+      width: 100%;
+      max-width: 50rem;
+      background: $blue;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @include responsive(991px) {
+
+    .image {
+      img {
+        width: 38rem;
+        height: 38rem;
+      }
+    }
+  }
+
+  @include responsive(768px) {
+    .container {
+      height: 80vh;
+      flex-direction: column;
+
+      .form-container {
+        order: 1;
+        max-width: 100%;
+        height: 60vh;
+        margin-bottom: 3rem;
+      }
+
+      .image {
+        order: 0;
+        max-width: 100%;
+        height: 20vh;
+
+        img {
+          width: 20rem;
+          height: 20rem;
+        }
+      }
+    }
+  }
+}
